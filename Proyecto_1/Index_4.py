@@ -1,0 +1,15 @@
+import pandas as pd
+
+df = pd.read_csv("../Data - Riesgos.csv")
+print(df)
+print(f"The number of rows in the DataFrame is {df.shape[0]} and the number of columns is {df.shape[1]}, so the number of data it contains is {df.shape[0]*df.shape[1]}.")
+print(f"The names of the columns in the DataFrame are {', '.join(x for x in df.columns.to_list())}.")
+print(f"The data types of the columns are listed below by column:\n{df.dtypes}")
+print("The first 10 rows of the DataFrame are listed below:")
+print(df.head(10))
+print("The last 10 rows of the DataFrame are listed below:")
+print(df.tail(10))
+print("Checking if there are null values in the DataFrame:")
+print(df.isnull().sum())
+df_1000 = df.head(1000).copy()
+print("The first 1000 rows of the DataFrame have been stored in a new DataFrame called df_1000.")
